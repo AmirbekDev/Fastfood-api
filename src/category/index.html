@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="http://localhost:8080/api/v1/categories" enctype="multipart/form-data" method="put">
+      <div class="form-group">
+        <input type="text" class="form-title" placeholder="Title..." name="name">
+        <input type="file" class="file" name="file">
+        <input type="submit" value="submit!" class="file-submit">
+      </div>
+    </form>
+    <div>
+      <script>
+        const token = "d17baf430daa4725dea298db4025074e";
+        const apiUrl = "http://localhost:8080/api/v1/categories";
+
+        fetch(apiUrl, {
+          headers: {
+            "Authorization": `${token}`,
+            "Content-Type": "application/json"
+          },
+          method: "GET"
+        })
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+      </script>
+</body>
+</html>
